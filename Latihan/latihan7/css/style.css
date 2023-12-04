@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 18px;
+    font-family:'Poppins' ,Arial, Helvetica, sans-serif;
+    margin: 50px;
+}
+
+/* container */
+
+.container {
+    display: grid;
+    gap: 10px;
+}
+
+/* header */
+
+.header {
+    display: grid;
+    grid-template-areas:
+    'hero hero feature-1'
+    'hero hero feature-2';
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 350px;
+    background-image: url(../img/logo.png);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+
+.hero h2, .hero p {
+    display: none;
+}
+
+.features {
+    background-color: #000;
+    color: white;
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    place-content: center ;
+    text-align: center;
+    cursor: pointer;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image: url(../img/grey.png);
+    background-size: cover;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(../img/bei.png);
+    background-size: cover;
+}
+
+.features .price {
+    font-size: 3em;
+    font-weight: 200;
+    color: #333;
+}
+
+.features .item {
+    color: #333;
+}
+
+/* navigasi */
+.menu {
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    
+
+}
+
+.menu .brand {
+    font-size: 1.2em;
+    color: #333;
+
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center;
+    color: #000;
+    gap: 5px;
+
+}
+
+.menu a{
+    display: block;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 5px;
+    
+}
+ 
+/* responsive breakpoint */
+
+@media (max-width: 1200px) {
+    .menu {
+        order: inherit;
+        grid-template-columns: 1fr;
+    }
+    .menu .brand {
+        display: none;
+    }
+    .hero > * {
+        display: block;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .hero {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+}
+
+@media (max-width: 768px){
+}
+
+@media (max-width: 500px){
+}
+
